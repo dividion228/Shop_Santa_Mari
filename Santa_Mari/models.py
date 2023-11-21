@@ -40,7 +40,7 @@ class Product(models.Model):
 
     class Meta:
         ordering = ('name',)
-        indexes = (models.Index(fields=('name', 'is_rental', 'id')))
+        index_together = ('name', 'is_rental', 'id')
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 
